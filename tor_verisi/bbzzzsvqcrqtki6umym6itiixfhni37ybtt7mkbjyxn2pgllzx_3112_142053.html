@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Breaking Bad Forum — DDoS Protection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Sarala, sans-serif;
+        }
+        img.logo {
+            margin-top: 30px;
+            padding-bottom: 10px;
+            max-width: 150px;
+        }
+        .error {
+            font-weight: 400;
+            color: #ff1212;
+        }
+
+        p {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .captcha-image {
+            display: block;
+            margin: 15px 0;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+
+        .captcha-input {
+            width: 242px;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            box-sizing: border-box;
+            border: 2px solid #ddd;
+            transition: border-color 0.2s ease;
+        }
+
+        .captcha-input:focus {
+            border-color: #185ba9;
+            outline: none;
+        }
+
+        .captcha-button {
+            width: 242px;
+            display: block;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            background-color: #185ba9;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .captcha-button:hover {
+            background-color: #144a8c;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="/assets/logo.png" alt="Logo"/>
+    <p>To protect our site from DDoS attacks, please complete the challenge.</p>
+
+    <form method="post" action="/ddos/verify/">
+        <img class="captcha-image" id="captcha" src="/ddos/captcha/FsT2hgwPpjNIXdXdsdLf.png" alt="Captcha image">
+        <input type="hidden" name="captchaId" value="FsT2hgwPpjNIXdXdsdLf" />
+        <label>
+            <input class="captcha-input" type="text" name="value" value="" placeholder="Type number" autofocus>
+        </label>
+        <button class="captcha-button"  type="submit">Join the BBForum</button>
+    </form>
+
+</body>
+</html>
